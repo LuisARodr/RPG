@@ -21,7 +21,6 @@ public abstract class Character3D : MonoBehaviour {
     protected Rigidbody rb;
     protected bool usesMana;
 
-
     [SerializeField]
     protected GameObject healthBar;
     protected Image healthBarValue;
@@ -118,8 +117,8 @@ public abstract class Character3D : MonoBehaviour {
     {
         if (manaValue + manaChange < 0)
             return false;
-        manaValue = manaValue + manaChange > maxManaValue ? maxManaValue:
-            manaValue + manaChange;
+        manaValue = manaValue + manaChange > maxManaValue ? maxManaValue
+            : manaValue + manaChange;
         //refrescar la barra de mana
         manaBarValue.fillAmount = manaValue / maxManaValue;
 
