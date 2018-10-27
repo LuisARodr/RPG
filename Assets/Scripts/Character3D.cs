@@ -35,7 +35,7 @@ public abstract class Character3D : MonoBehaviour {
         healthBarValue = healthBar.transform.GetChild(1).GetComponent<Image>();
         healthValue = 100f;
 
-        RefreshHealt(0f);
+        RefreshHealth(0f);
         if (usesMana)
         {
             manaValue = maxManaValue;
@@ -83,13 +83,13 @@ public abstract class Character3D : MonoBehaviour {
         {
             //hay que poner un scrip o hacer alguna manera en la que podamos darle un valor al daño que hacen los ataques
             float damage = 30f;
-            RefreshHealt(-damage);
+            RefreshHealth(-damage);
         }
         else if(other.tag == "Heal")
         {
             //hay que poner un scrip o hacer alguna manera en la que podamos darle un valor al daño que hacen los ataques
             float healAmount = 30f;
-            RefreshHealt(healAmount);
+            RefreshHealth(healAmount);
         }
         //aqui hay que poner los tags de las pociones de vida y mana y las flechas, alomejor el de las flechas nomas en el del arquero
     }
