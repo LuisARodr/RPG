@@ -120,7 +120,7 @@ public abstract class Character3D : MonoBehaviour {
         manaValue = manaValue + manaChange > maxManaValue ? maxManaValue
             : manaValue + manaChange;
         //refrescar la barra de mana
-        manaBarValue.fillAmount = manaValue / maxManaValue;
+        manaBarValue.fillAmount = (float)manaValue / maxManaValue;
 
         return true;
     }
