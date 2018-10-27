@@ -94,7 +94,7 @@ public abstract class Character3D : MonoBehaviour {
         //aqui hay que poner los tags de las pociones de vida y mana y las flechas, alomejor el de las flechas nomas en el del arquero
     }
 
-    protected void RefreshHealt(float healthChange)
+    public void RefreshHealth(float healthChange)
     {
         healthValue = healthValue + healthChange < 0 ? 0 :
             healthValue + healthChange > 100 ? 100 :
