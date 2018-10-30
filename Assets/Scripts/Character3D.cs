@@ -124,8 +124,4 @@ public abstract class Character3D : MonoBehaviour {
 
         return true;
     }
-
-
-
-
 }
