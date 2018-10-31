@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e71eedf6b7871409b06c4f9a18af86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 0.5
+  maxLifeTime: 0.75
   poolTag: Spell
   velocity: 500
 --- !u!135 &135738115340542080

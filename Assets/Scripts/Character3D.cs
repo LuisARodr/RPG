@@ -75,6 +75,9 @@ public abstract class Character3D : MonoBehaviour {
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.name.StartsWith("Spike")) {
+            RefreshHealth(-collision.gameObject.GetComponent<Spike>().spike);
+        }
     }
 
     protected virtual void OnTriggerEnter(Collider other)

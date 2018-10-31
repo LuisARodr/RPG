@@ -18,7 +18,6 @@ public class DamageMage : Character3D {
     protected override void Start() {
         usesMana = true;
         base.Start();
-        RefreshHealth(-80);
         objectPooler = ObjectPooler.Instance;
     }
 
