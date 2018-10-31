@@ -36,7 +36,8 @@ public class DamageMage : Character3D {
         if(Controllers.GetButton(1, "A", 2)) {
             if (RefreshMana(-manaSpell)) {
                 anim.SetTrigger("Attack");
-                objectPooler.GetObjectFromPool("Spell", spellSpawner.transform.position, spellSpawner.transform.rotation);
+                objectPooler.GetObjectFromPool("Spell", spellSpawner.transform.position, spellSpawner.transform.rotation, null);
+                objectPooler.GetObjectFromPool("SpellCast", spellSpawner.transform.position, spellSpawner.transform.rotation, spellSpawner.transform);
             }
         }
     }

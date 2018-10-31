@@ -86,7 +86,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &114491437352600608
 MonoBehaviour:
@@ -102,6 +102,9 @@ MonoBehaviour:
   maxLifeTime: 0.75
   poolTag: Spell
   velocity: 500
+  spell: {fileID: 1161953743309226}
+  scaleFactor: 0.71
+  spellStartDecresingTime: 0.8
 --- !u!135 &135738115340542080
 SphereCollider:
   m_ObjectHideFlags: 1

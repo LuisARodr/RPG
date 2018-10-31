@@ -8,7 +8,7 @@ namespace GameCore {
 
             protected ObjectPooler objectPooler;
 
-            [SerializeField, Range(0, 2)]
+            [SerializeField, Range(0, 3)]
             protected float maxLifeTime;
             protected float lifeTime;
             [SerializeField]

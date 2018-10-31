@@ -48,7 +48,7 @@ namespace GameCore {
                 poolDictionary[tag].Enqueue(obj);
             }
 
-            public void GetObjectFromPool(string tag, Vector3 position, Quaternion rotation) {
+            public void GetObjectFromPool(string tag, Vector3 position, Quaternion rotation, Transform parent) {
                 if (!poolDictionary.ContainsKey(tag)) {
                     Debug.LogWarning("Pool with tag " + tag + " doesn't exit.");
                     return;
@@ -59,6 +59,7 @@ namespace GameCore {
                     obj.SetActive(true);
                     obj.transform.position = position;
                     obj.transform.rotation = rotation;
+                    obj.transform.parent = parent;
                 }
                 return;
             }

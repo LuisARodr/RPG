@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4728943336013882}
-  - component: {fileID: 114801523745110858}
+  - component: {fileID: 114839794321697068}
   m_Layer: 0
-  m_Name: SpellCast
+  m_Name: SpellDissolve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ Transform:
   m_GameObject: {fileID: 1898567815352376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.18}
-  m_LocalScale: {x: 0.16921286, y: 0.16921286, z: 0.16921286}
+  m_LocalScale: {x: 0.19755602, y: 0.19755602, z: 0.19755602}
   m_Children: []
   m_Father: {fileID: 4728943336013882}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114801523745110858
+--- !u!114 &114839794321697068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,15 +79,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855303974489362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6abdecbf598de74889cbed351376cf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 739bfea2354217a46a8e32bbbbf0e3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 0.47
-  poolTag: SpellCast
-  blast: {fileID: 1898567815352376}
-  scaleFactor: 0.65
-  blastInitialScaleFactor: 0.116
-  blastStartDecresingTime: 0.519
+  maxLifeTime: 2
+  poolTag: SpellDissolve
 --- !u!198 &198180814108220806
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -95,11 +91,11 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1898567815352376}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
-  prewarm: 1
+  looping: 0
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -220,8 +216,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3.0290763
-      minScalar: 3
+      scalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -336,8 +332,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
-      minScalar: 0.8
+      scalar: 2
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -658,7 +654,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -711,7 +707,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 4
+    type: 0
     angle: 65.97751
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
