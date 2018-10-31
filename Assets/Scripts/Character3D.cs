@@ -27,7 +27,8 @@ public abstract class Character3D : MonoBehaviour {
     [SerializeField]
     protected GameObject manaBar;
     protected Image manaBarValue;
-
+    [SerializeField]
+    GameObject deadText;
 
     // Use this for initialization
     protected virtual void Start () {
@@ -114,7 +115,7 @@ public abstract class Character3D : MonoBehaviour {
         healthBarValue.fillAmount = healthValue / 100f;
         if (healthValue <= 0)
         {
-            //lo que pasa cuando el personaje se queda sin vida
+            deadText.SetActive(true);
         }
     }
 
