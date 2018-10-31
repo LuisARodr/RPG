@@ -91,6 +91,14 @@ public abstract class Character3D : MonoBehaviour {
             float healAmount = 30f;
             RefreshHealth(healAmount);
         }
+        else if (other.tag == "ManaPickup") {
+            RefreshMana(other.GetComponent<PickupValue>().value);
+            Destroy(other.transform.parent.gameObject);
+        }
+        else if (other.tag == "HealthPickup") {
+            RefreshHealth(other.GetComponent<PickupValue>().value);
+            Destroy(other.transform.parent.gameObject);
+        }
         //aqui hay que poner los tags de las pociones de vida y mana y las flechas, alomejor el de las flechas nomas en el del arquero
     }
 
