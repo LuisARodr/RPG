@@ -18,29 +18,76 @@ public class Shield : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("El escudo ha chocado");
-        WarriorMan another = this.transform.root.gameObject.GetComponent<WarriorMan>();
-        Debug.Log("PADRE: " + (this.transform.root.name));
-        Debug.Log("PADRE2: " + (other.transform.root.name));
 
 
-        WarriorMan thisone = other.transform.root.gameObject.GetComponent<WarriorMan>();
-        
-        if(thisone.Guarded2)
+     //   Debug.Log("Shield");
+        //Debug.Log("SCollider: " + other.name + " Padre: " + other.transform.root.name + " Objeto tocado: " + this.name);
+       // Debug.Log("PCollider padre: " + other.transform.root.name + " Padre de este: " + this.transform.root.name );
+
+        string padre = other.transform.root.name;
+        string padreeste = this.transform.root.name;
+        WarriorMan thisone = null;
+        WarriorDummy thatone = null;
+
+        WarriorMan otherone = null;
+        WarriorDummy otherwise = null;
+        if (padreeste.StartsWith("WarriorD") )
         {
-            thisone.Guarded = true;
+          //  Debug.Log("Please work este1");
+           thatone = this.transform.root.gameObject.GetComponent<WarriorDummy>();
+
         }
-        if (other.tag == "Damage" && !another.Guarded && (this.transform.root.name != other.transform.root.name))
+        else if (padreeste.StartsWith("Warrior") )
         {
-            
+            //Debug.Log("Please work este2");
+            thisone = this.transform.root.gameObject.GetComponent<WarriorMan>();
 
-             another = this.transform.root.gameObject.GetComponent<WarriorMan>();
+        }
+
+        if (padre.StartsWith("WarriorD"))
+        {
+           // Debug.Log("Please work padre1");
+            otherwise = other.transform.root.gameObject.GetComponent<WarriorDummy>();
+
+        }
+        else if (padre.StartsWith("Warrior"))
+        {
+          //  Debug.Log("Please work padre2");
+            otherone = this.transform.root.gameObject.GetComponent<WarriorMan>();
+
+        }
+
+        if (other.tag == "Damage" && (this.transform.root.name != other.transform.root.name))
+        {
+            Debug.Log("El escudo ha sido golpeado por algo que hace daño");
+            Debug.Log("WarriorMan: " + otherwise + ":" + otherone + " DummyMan: " + thatone + ":" + thisone);
+
+            if(thatone != null)
+            {
+                if (thatone.Guarded)
+                {
+                    Debug.Log("Golpe anulado men"); 
+                    otherone.SetCollidersStatus(false, "Sword");
+                }
+            }
+            if(thisone != null)
+            {
+                if (thisone.Guarded)
+                {
+                    Debug.Log("Golpe anulado men");
+                    otherwise.SetCollidersStatus(false, "Sword");
+                }
+            }
             
-            Debug.Log("Te has cubrido men!!");
 
 
         }
         
        
     }
+    private void OnCollisionExit(Collision collision)
+    {
+        
+    }
 }
+
