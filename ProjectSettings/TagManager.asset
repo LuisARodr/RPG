@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ManaPickup
   - HealthPickup
+  - Damage
+  - Guard
   layers:
   - Default
   - TransparentFX
