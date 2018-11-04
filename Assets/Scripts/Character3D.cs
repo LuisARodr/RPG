@@ -83,6 +83,7 @@ public abstract class Character3D : MonoBehaviour {
 
     protected virtual void OnTriggerEnter(Collider other)
     {
+		print (other);
         if(other.tag == "Damage")
         {
             //hay que poner un scrip o hacer alguna manera en la que podamos darle un valor al daño que hacen los ataques

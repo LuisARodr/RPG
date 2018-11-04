@@ -8,6 +8,7 @@ TagManager:
   - HealthPickup
   - Damage
   - Guard
+  - Arrows
   layers:
   - Default
   - TransparentFX

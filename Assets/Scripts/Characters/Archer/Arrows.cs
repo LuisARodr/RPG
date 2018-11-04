@@ -9,13 +9,21 @@ public class Arrows : MonoBehaviour {
 	protected string poolTag;
 	[SerializeField]
 	float velocity;
-	[SerializeField]
 	Rigidbody rb;
 	ObjectPooler objectPooler;
 
 	void Start(){
+		rb = GetComponent<Rigidbody>();
 		objectPooler = ObjectPooler.Instance;
 		rb.velocity = transform.forward * velocity * Time.deltaTime;
+	}
+
+	void OnTriggerEnter(Collider other){
+		if (other.name != "Archer") {
+			rb.velocity = Vector3.zero;
+			rb.useGravity = false;
+			objectPooler.ReturnObjectToPool ("Arrow", gameObject);
+		}
 	}
 
 }
