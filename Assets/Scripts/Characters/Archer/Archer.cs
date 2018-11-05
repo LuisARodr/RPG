@@ -4,6 +4,7 @@ using UnityEngine;
 using GameCore.SystemControls;
 using GameCore.ObjectPooler;
 using UnityEngine.UI;
+using GameCore.SystemMovements;
 
 public class Archer : Character3D {
 
@@ -28,10 +29,12 @@ public class Archer : Character3D {
 	}
 
 	override protected void Move() {
-		if (!Controllers.GetButton (1, "A", 2)) {
+        /*if (!Controllers.GetButton (1, "A", 2)) {
 			base.Move ();
 			anim.SetFloat ("Velocity", Mathf.Abs (rb.velocity.x + rb.velocity.z));
-		}
+		}*/
+        base.Move();
+        anim.SetFloat("Velocity", Mathf.Abs(Movement.Axis.magnitude));
 	}
 
 	override protected void Attack() {

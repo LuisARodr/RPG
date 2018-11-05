@@ -56,12 +56,13 @@ public abstract class Character3D : MonoBehaviour {
 
     protected virtual void Move()
     {
-        Movement.MoveForward(rb, movementSpeed, transform);
+        //Movement.MoveForward(rb, movementSpeed, transform);
+        Movement.MoveTopDown(transform, movementSpeed);
     }
 
     protected virtual void Rotate()
     {
-        Movement.RotateY(transform, rotationSpeed);
+        //Movement.RotateY(transform, rotationSpeed);
     }
 
     protected virtual void Attack()
