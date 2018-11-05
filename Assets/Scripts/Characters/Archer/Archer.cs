@@ -44,6 +44,7 @@ public class Archer : Character3D {
 				if (animStateInfo.IsName ("shoot-still")) {
 					objectPooler.GetObjectFromPool ("Arrow", arrowSpawner.transform.position, arrowSpawner.transform.rotation, null);
 				}
+
 				anim.SetBool ("Attack", false);
 				contadorflechas -= 1;
 				textArrows.text = "Flechas: " + contadorflechas;
